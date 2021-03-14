@@ -448,10 +448,10 @@ p {
 }
 
 .tomster {
-  background: url(../assets/images/teaching-tomster.png);
+  background: url(../assets/images/avtoyordam.jpeg);
   background-size: contain;
   background-repeat: no-repeat;
-  height: 200px;
+  height: 100px;
   width: 200px;
 
   position: relative;
