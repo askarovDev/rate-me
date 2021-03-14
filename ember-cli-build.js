@@ -7,7 +7,13 @@ module.exports = function (defaults) {
     'ember-bootstrap': {
       bootstrapVersion: 4,
       importBootstrapCSS: true
-    }
+    },
+
+    sassOptions: {
+      includePaths: [
+        'app/_pods'
+      ]
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated

@@ -2,6 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
+    podModulePrefix: 'rate-me/_pods',
     modulePrefix: 'rate-me',
     environment,
     rootURL: '/',
