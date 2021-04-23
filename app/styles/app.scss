@@ -1,14 +1,22 @@
 @import "ember-bootstrap/bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic);
+@import "./resets";
+@import "./variables";
+
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
 
 /**
  * Base Elements
  */
-
-* {
-  margin: 0;
-  padding: 0;
-}
 
 body,
 h1,
@@ -22,21 +30,58 @@ div,
 span,
 a,
 button {
-  font-family: 'Lato', 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-family: "Lato", "Open Sans", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
   line-height: 1.5;
 }
 
 body {
-  background: #f3f3f3;
+  background-color: #fdfefe;
+  color: #444;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.catalog {
+  @include flexCenter(column);
+  width: 80%;
+  margin: 0, auto;
+  flex-basis: 50%;
+  flex-grow: 5;
+
+  #{&}0 {
+    font-weight: weight(medium);
+    color: hotpink;
+  }
+
+  #{&}1 {
+    font-weight: weight(regular);
+  }
+
+  #{&}2 {
+    font-weight: weight(regular);
+  }
+
+  #{&}3 {
+    font-weight: weight(regular);
+  }
+
+  #{&}4 {
+    font-weight: weight(regular);
+  }
+
+  &:hover {
+    color: grey;
+  }
 }
 
 a {
-  color: #016aba;
+  color: $accent-color;
   text-decoration: none;
 }
 
 button {
-  font-size: 100%;
+  font-size: 50%;
 }
 
 p {
@@ -52,7 +97,7 @@ p {
   padding: 10px 30px 10px;
   text-decoration: none;
   color: #fff;
-  background: #016aba;
+  background: #15142e;
   border-radius: 5px;
   border: none;
   font-size: 20px;
@@ -62,17 +107,19 @@ p {
 }
 
 .button:hover {
-  opacity: 1;
+  opacity: 5;
 }
 /**
  * Body Container
  */
 
 .container {
-  max-width: 1024px;
+  display: inline-block;
+  max-width: 100% !important;
   min-height: 100vh;
-  background: #f9f9f9;
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.75);
+  margin: auto;
+  position: relative;
 }
 /**
  * Top Navigation
@@ -80,44 +127,32 @@ p {
 
 .menu {
   height: 4em;
-  background-color: #677ae4;
-  background-color: #05526A;
-  background-color: #e46855;
+  background: #183a4c;
 }
 
-.menu h1 {
-  position: relative;
-  padding: 5px 0 0 8px;
-  color: #f9f9f9;
-  font-size: 1.8em;
-  font-style: italic;
+.tomster {
+  background: url(../assets/images/avtoyordam.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 53.63px;
+  width: 48px;
+  margin: 7px;
+  position: absolute;
 }
-
 .menu a,
 .menu .links {
   display: inline-block;
 }
 
 .menu a {
-  text-decoration: none;
-  padding: 0 15px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.menu a:hover,
-.menu a.active {
-  opacity: 1;
+  padding-left: 0px;
+  padding-top: 10px;
 }
 
 .menu .links {
-  padding: 0 21px;
-}
-
-.menu .links a {
-  position: relative;
-  bottom: 5px;
+  text-decoration: none;
+  color: $text-color;
+  font-size: 20px;
 }
 
 .rentals label span {
@@ -156,7 +191,7 @@ p {
     opacity: 1;
 
     &:hover {
-      background-color: #111;
+      background-color: rgba(255 255 255);
       opacity: 1;
     }
   }
@@ -188,21 +223,121 @@ p {
 /**
  * Content Area
  */
+.categories-list {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  color: #444;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  box-sizing: inherit;
+  padding: 0.25rem 2rem 0.25rem 0.25rem;
+  font-size: 1.25rem;
+  float: left;
+  display: block;
+  width: 100%;
+  border-top: none;
+  border-left: 1px solid #d5e3ea;
+  margin-right: 0;
 
-.body {
-  padding: 15px;
+  #title {
+    font-size: 1.5rem;
+    padding: 1.5rem 0.75rem;
+    line-height: 1;
+  }
+
+  ul {
+    border-top: 1px dotted #d5e3ea;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      padding: 0.8rem;
+      border-bottom: 1px dotted #d5e3ea;
+
+      a {
+        transition: color 0.1s linear;
+        color: #2f7498;
+        text-decoration: none;
+      }
+    }
+
+    ul {
+      li.indent {
+        padding-left: 2.25rem;
+        text-indent: -1rem;
+        line-height: 1;
+      }
+    }
+  }
 }
+
+.top-addons {
+  color: #444;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  box-sizing: inherit;
+  border-top: 1px solid #d5e3ea;
+  padding-top: 1.5rem;
+  margin-bottom: 2rem;
+
+  .addon-list {
+    font-size: 1.2rem;
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+
+    li {
+      border-radius: 2px;
+      border-bottom: 1px dotted #d5e3ea;
+      padding: 0.9rem 1.5rem 0.9rem 1rem;
+
+      .ranking {
+        font-size: 1rem;
+        color: #999;
+        margin-right: 1rem;
+        position: absolute;
+      }
+
+      .desc {
+        padding-left: 3.5rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+li a {
+  background-color: transparent;
+  -webkit-transition: color 0.1s linear;
+  -moz-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+  color: #2f7498;
+  text-decoration: none;
+}
+
+.large-search .search .search-wrapper {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+}
+
+.large-search .search input {
+  margin: 0;
+  padding-right: 3rem;
+  border: 2px solid #2f7498;
+}
+
 /**
  * Similar to Jumbotron
  */
 
 .jumbo {
-  padding: 50px;
-  background: #f6f6f6;
-}
-
-.jumbo:hover {
-  background-color: #f3f3f3;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
 }
 
 .jumbo h2 {
@@ -279,7 +414,8 @@ p {
   transition: opacity 0.25s ease-in-out;
 }
 
-.rental button.image:focus:after, .rental button.image:hover:after {
+.rental button.image:focus:after,
+.rental button.image:hover:after {
   opacity: 0.1;
 }
 
@@ -398,7 +534,8 @@ p {
 }
 
 @media only screen and (max-width: 919px) {
-  .rental.detailed .image, .rental.detailed .image.large {
+  .rental.detailed .image,
+  .rental.detailed .image.large {
     margin: 30px 25px 25px 25px;
     flex-basis: 100%;
     cursor: default;
@@ -450,21 +587,52 @@ p {
   position: relative;
 }
 
-.tomster {
-  background: url(../assets/images/avtoyordam.jpeg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100px;
-  width: 200px;
-
-  position: relative;
-  top: -25px;
-}
-
-.screen-reader{
+.screen-reader {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
-  height: 1px; width: 1px;
-  margin: -1px; padding: 0; border: 0;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+// Categories/authentication
+
+.content {
+  color: #444;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  box-sizing: inherit;
+  min-height: 500px;
+  padding: 2rem 2rem 0;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  padding-right: 1rem;
+}
+.categories-shoew h1 {
+  margin-bottom: 0.25em;
+  font-size: 2.25em;
+  text-rendering: optimizeLegibility;
+}
+
+.description {
+  color: #999;
+  font-style: italic;
+}
+
+.button-select button.selected {
+  background-color: #2f7498;
+  color: #fff !important;
+}
+.button-select {
+  white-space: nowrap;
+}
+
+.categories-show .sort-controls {
+  float: right;
 }

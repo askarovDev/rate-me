@@ -1,0 +1,46 @@
+{{!-- <nav class="menu">
+  <Jumbo>
+    <div>
+      <div class="left tomster"></div>
+       <LinkTo @route="index" class="menu-index">
+
+      <h1>AvtoYordam</h1>
+
+    </LinkTo>
+    </div>
+   
+    <div class="links">
+      <LinkTo @route="about" class="menu-about">
+        About
+      </LinkTo>
+
+      <LinkTo @route="contact" class="menu-contact">
+        Contact
+      </LinkTo>
+    </div>
+  </Jumbo>
+</nav> --}}
+
+
+<BsNavbar
+  @type="light"
+  @backgroundColor="light"
+  @collapsed={{true}}
+  @onCollapse={{action (mut collapsed) true}}
+  @onExpand={{action (mut collapsed) false}} as |navbar|>
+  <div class="navbar-header">
+    {{navbar.toggle}}
+    <div class="left tomster"></div>
+    {{#link-to "index" class="navbar-brand"}}AvtoYordam{{/link-to}}
+  </div>
+  <navbar.content>
+     <navbar.nav as |nav|>
+      <nav.item>
+        <nav.link-to @route="about">About</nav.link-to>
+      </nav.item>
+      <nav.item>
+        <nav.link-to @route="contact">Contact</nav.link-to>
+      </nav.item>
+     </navbar.nav>
+  </navbar.content>
+</BsNavbar>

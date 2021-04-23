@@ -10,4 +10,6 @@ Router.map(function () {
   this.route('about');
   this.route('contact', {path: '/getting-in-touch'});
 
+  this.route('service', {path: '/service/:id'});
+  this.route('categories', {path: '/categories/:slug'});
 });

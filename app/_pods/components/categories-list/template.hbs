@@ -1,0 +1,12 @@
+<div class="categories-list ember-view"><h2 id="title">Categories</h2>
+    <ul>
+        {{#each list as |listItem|}}
+            <li title="Addons for auth">
+            <LinkTo @route="categories" @model={{listItem.slug}}  class="ember-view test-category">
+                {{listItem.title}} ({{listItem.count}})
+            </LinkTo>
+            </li>
+        {{/each}}
+    
+    </ul>
+</div>
