@@ -8,7 +8,7 @@
 }
 
 @mixin flexCenter($direction) {
-  display: flex;
+  
   justify-content: center;
   align-items: center;
   flex-direction: $direction;
@@ -120,14 +120,23 @@ p {
   background: rgba(255, 255, 255, 0.75);
   margin: auto;
   position: relative;
+ 
+  
 }
 /**
  * Top Navigation
  */
 
+
 .menu {
   height: 4em;
   background: #183a4c;
+}
+
+.navbar-collapse {
+  display: inline-block; // stylelint-disable-line declaration-no-important
+  flex-basis: auto;
+  justify-content: flex-end;
 }
 
 .tomster {
@@ -335,7 +344,6 @@ li a {
  */
 
 .jumbo {
-  display: flex;
   justify-content: space-between;
   text-align: left;
 }
@@ -365,7 +373,7 @@ li a {
   margin-top: 15px;
   background-color: #f6f6f6;
   padding: 20px 25px;
-  display: flex;
+
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -448,7 +456,7 @@ li a {
 .rental .details {
   flex-basis: 50%;
   flex-grow: 2;
-  display: flex;
+ 
   height: 150px;
   margin: 20px 25px;
   justify-content: space-between;
