@@ -133,6 +133,11 @@ p {
   background: #183a4c;
 }
 
+.navbar-brand {
+
+  font-size: 2em;
+}
+
 .navbar-collapse {
   display: inline-block; // stylelint-disable-line declaration-no-important
   flex-basis: auto;
@@ -145,8 +150,8 @@ p {
   background-repeat: no-repeat;
   height: 53.63px;
   width: 48px;
-  margin: 7px;
-  position: absolute;
+  margin: -5px 10px;
+  padding: 5px 10px;
 }
 .menu a,
 .menu .links {
