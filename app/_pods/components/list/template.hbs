@@ -1,0 +1,10 @@
+<div class="catalog">
+<ul>
+  {{#each @records as |record|}}
+    <li>
+      {{record.name}}
+      <div>{{record.class}}</div>
+    </li>
+  {{/each}}
+</ul>
+</div>

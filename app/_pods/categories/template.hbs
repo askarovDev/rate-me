@@ -1,0 +1,94 @@
+{{page-title "Categories"}}
+
+<div class="row">
+
+    {{!-- <div class="col-8"> --}}
+        <div class="categories-show">
+            <div class="details">
+                <div class="category-details">
+                    <h1 class="test-category-header">Authentication</h1>
+                    <p class="description test-category-description">
+                        Addons for auth<br>
+                        <!---->
+                    </p>
+                    <h6>Subcategories</h6>
+                    <span class="category-list test-category-list ember-view">
+                        <span class="ember-view">
+                            <a href="/categories/ember-cli-simple-auth-extensions" class="ember-view">
+                                ember-cli-simple-auth extensions
+                                (33)
+                            </a>
+
+                        </span>
+                    </span>
+                </div>
+                <div class="sort-controls">
+                    Sort by:
+                    <div class="button-select">
+                         <button {{action "changeSort" "rank"}} class="button-option" type="button">
+                            Rank
+                        </button>
+
+                         <button {{action "changeSort" "title"}} class="button-option" type="button">
+                            Name
+                        </button>
+
+                        <button {{action "changeSort" "score"}} class="button-option" type="button">
+                            Score
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="addons">
+                <span class="addon-count test-addon-table-count">Displaying 41 addons</span>
+                <ul class="addon-list">
+                    {{#each this.sortedServices as |service|}}
+                        <ServiceItemRow @service={{service}} />>
+                    {{/each}}
+
+                </ul>
+            </div>
+        </div>
+    {{!-- </div> --}}
+
+    {{!-- <div class="col-4">
+        <CategoriesList />
+    </div> --}}
+
+</div> --}}
+
+<!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ]
+  }
+  ```
+-->
+<!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ]
+  }
+  ```
+-->
+

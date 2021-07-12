@@ -1,0 +1,46 @@
+<div class="top-addons">
+    <h1>Top addons</h1>
+    <ul class="addon-list">
+        {{#each list as |listItem |}}
+        <li class="test-addon-row">
+            <div>
+                <span class="ranking">#{{listItem.rank}}</span>
+                <div class="desc">
+                    <LinkTo @route="service" @model={{listItem.id}} class="ember-view addon-link test-addon-name">
+                        <span class="addon-name">
+                            {{listItem.title}}
+                            {{listItem.rank}}
+                            <!---->
+                        </span>
+
+
+                        <small>- {{listItem.desc}}</small>
+                    </LinkTo>
+                    <p>
+                        <small><span class="category-list test-category-list ember-view"> <span id="ember2414"
+                                    class="ember-view">
+                                    <a href="/categories/build-tools" id="ember2415" class="ember-view">
+                                        {{listItem.category}}
+                                    </a>
+
+
+                                </span>
+                            </span></small>
+                        <span class="last-updated">Last updated <time title="2021-03-26T18:53:17.882Z"
+                                datetime="2021-03-26T18:53:17.882Z" id="ember2416" class="ember-view">25 days ago
+                            </time></span>
+                    </p>
+                </div>
+            </div>
+
+        </li>
+        {{/each}}
+        <a href="/lists/top-addons" class="ember-view">
+            <li class="more">
+                See all top 100 addons
+            </li>
+        </a>
+
+    </ul>
+
+</div>
