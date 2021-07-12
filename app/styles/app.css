@@ -45,6 +45,12 @@ p {
   margin-bottom: 15px;
 }
 
+.grid {
+  ol, ul {
+    padding: 0;
+  }
+}
+
 /**
  * Button
  */
