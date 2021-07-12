@@ -12,4 +12,5 @@ Router.map(function () {
 
   this.route('service', {path: '/service/:id'});
   this.route('categories', {path: '/categories/:slug'});
+  this.route('welcome');
 });
