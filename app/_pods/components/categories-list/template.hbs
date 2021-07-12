@@ -1,12 +1,25 @@
-<div class="categories-list ember-view"><h2 id="title">Categories</h2>
-    <ul>
-        {{#each list as |listItem|}}
-            <li title="Addons for auth">
-            <LinkTo @route="categories" @model={{listItem.slug}}  class="ember-view test-category">
-                {{listItem.title}} ({{listItem.count}})
-            </LinkTo>
+<section aria-labelledby="categories-list">
+    <div class="bg-white rounded-lg shadow">
+      <div class="p-6">
+        <h2 id="categories-list" class="text-base font-medium text-gray-900">
+          Categories
+        </h2>
+        <div class="mt-6 flow-root">
+          <ul class="-my-4 divide-y divide-gray-200">
+            {{#each list as |listItem|}}
+                <LinkTo @route="main.categories.category" @model={{listItem.slug}} @tagName="li" class="flex items-center py-4 space-x-3">
+                    {{listItem.title}} ({{listItem.count}})
+                </LinkTo>
+            {{/each}}
+            <li class="flex items-center py-4 space-x-3">
             </li>
-        {{/each}}
-    
-    </ul>
-</div>
+          </ul>
+        </div>
+        <div class="mt-6">
+          <a href="#" class="w-full block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+            View all
+          </a>
+        </div>
+      </div>
+    </div>
+</section>
