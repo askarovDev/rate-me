@@ -8,6 +8,6 @@ const list= [
 
 export default class ServiceRoute extends Route {
     model({ id }) {
-        return list.find((item) => item.id === id)
+        // return list.find((item) => item.id === id)
     } 
 }

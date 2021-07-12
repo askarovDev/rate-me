@@ -11,7 +11,8 @@ Router.map(function () {
     this.route('categories', function() {
       this.route('category', { path: '/:slug' });
     });
-    this.route('service', { path: '/service/:id' });
+    this.route('service');
+    // this.route('service', { path: '/service/:id' });
   });
 
   this.route('welcome');
