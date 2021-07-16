@@ -1,4 +1,6 @@
 {
   "disableAnalytics": false,
-  "usePods": true
+  "usePods": true,
+  "componentClass": "@glimmer/component",
+  "proxy": "http://localhost:3000"
 }

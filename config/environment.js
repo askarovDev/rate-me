@@ -22,6 +22,11 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
+    API: {
+      // configure for specific environments below
+      host: ''
+    }
   };
 
   if (environment === 'development') {
@@ -30,6 +35,8 @@ module.exports = function (environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.API.host = 'http://localhost:3000';
+    ENV.API.apiNamespace = 'api';
   }
 
   if (environment === 'test') {
