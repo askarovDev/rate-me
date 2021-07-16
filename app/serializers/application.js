@@ -1,14 +1,12 @@
-import JSONAPISerializer from '@ember-data/serializer/json';
-import { assign } from '@ember/polyfills';
+import JSONAPISerializer from 'ember-data/serializers/json-api';
+import { underscore } from '@ember/string';
 
-export default class SessionSerializer extends JSONAPISerializer {
-  serializeIntoHash(hash, type, record, options) {
-    assign(hash, this.serialize(record, options));
+export default class ApplicationSerializer extends JSONAPISerializer {
+  keyForAttribute(key) {
+    return underscore(key);
   }
-  normalizeResponse(store, primaryModelClass, payload) {
-    payload.token = payload.data.attributes.token;
-    payload.id = payload.data.id;
-    payload.userId = payload.data.relationships.user.data.id;
-    return super.normalizeResponse(...arguments);
+
+  keyForRelationship(key) {
+    return underscore(key);
   }
 }
